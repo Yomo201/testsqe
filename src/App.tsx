@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// @ts-ignore
+import AnalogClock from 'analog-clock-react'
 
 function App() {
+  const options = {
+    "useCustomTime": false,
+        "width": "300px",
+        "border": true,
+        "borderColor": "#70c1ff",
+        "baseColor": "#4de7ff",
+        "centerColor": "#ff00ae",
+        "centerBorderColor": "#ffffff",
+        "handColors": {
+      "second": "#d81c7a",
+          "minute": "#ffffff",
+          "hour": "#ffffff"
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <AnalogClock {...options} />
     </div>
   );
 }
